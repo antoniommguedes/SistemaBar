@@ -9,18 +9,24 @@ import business.Cliente;
 
 public class TestCliente {
 
+	
+	private Cliente C1, C2;
 	@BeforeEach
 
 	public void setUp() {
 
-		Cliente C1 = new Cliente("Fulano", "123456789", 30, 'M');
-		Cliente C2 = new Cliente("Beltrano", "987654321", 60, 'F', "1");
+		C1 = new Cliente("Fulano", "123456789", 30, 'M');
+		C2 = new Cliente("Beltrano", "987654321", 60, 'F', "1");
 
 	}
 
 	@Test
-	void test() {
-		fail("Not yet implemented");
+	public void testCriaSocio() {
+		assertEquals("Beltrano", C2.getNome());
+		assertEquals("987654321", C2.getCpf());
+		assertEquals(60, C2.getIdade());
+		assertEquals('F', C2.getGenero());
+		assertEquals("1", C2.getSocio());
 	}
 
 }
