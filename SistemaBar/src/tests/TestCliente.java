@@ -28,5 +28,14 @@ public class TestCliente {
 		assertEquals('F', C2.getGenero());
 		assertEquals("1", C2.getSocio());
 	}
+	
+	
+	@Test
+	public void testCriaCliente() {
+		assertEquals("Fulano", C1.getNome());
+		assertEquals("123456789", C1.getCpf());
+		assertEquals(30, C1.getIdade());
+		assertEquals('M', C1.getGenero());
+	}
 
 }

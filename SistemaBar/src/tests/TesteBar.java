@@ -35,6 +35,30 @@ public class TesteBar {
 		assertEquals(false, B1.BuscaCpf(C1.getCpf()));
 	}
 	
+	@Test
+	public void testListaClientes() {
+		B1.addCliente(C1);
+		assertEquals("nullFulano", B1.ListaClientes());
+
+	}
+
+	@Test
+	public void testBuscaCpf() {
+		B1.addCliente(C2);
+		assertEquals(true, B1.BuscaCpf("987654321"));
+
+	}
+
+	@Test
+	public void testTotalPessoas() {
+
+		B1.addCliente(C1);
+		B1.addCliente(C2);
+		assertEquals(2, B1.TotalPessoas());
+
+	}
+	
+	
 	
 
 }
