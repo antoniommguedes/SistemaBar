@@ -1,0 +1,10 @@
+Nome: Fulano
+Cpf: 032145784
+Idade: 61
+Genero: M
+
+Nome: Beltrano
+Cpf: 124578954
+Idade: 72
+Genero: M
+Socio: 012345

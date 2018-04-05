@@ -1,15 +1,19 @@
 package business;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 
 public class Bar {
 
 	private ArrayList<Cliente> clientes = new ArrayList();
+	private ArrayList<Cliente> clienteaux = new ArrayList();
 
 	public Bar() {
 	}
 
 	public String ListaClientes() { // MÉTODO RETORNA TODOS CLIENTES
-		String cliente = null;
+		String cliente= "";
 		for (int i = 0; i < clientes.size(); i++) {
 			cliente = cliente + clientes.get(i).getNome();
 
@@ -79,6 +83,8 @@ public class Bar {
 	
 	public void addCliente(Cliente c) {
 		clientes.add(c);
+		clienteaux.add(c);
+		
 	}
 	
 	public void removeCliente(String cpf) {
@@ -90,6 +96,25 @@ public class Bar {
 	}
 	
 	
+	public void gerarTxt() throws IOException {
+		 FileWriter arq = new FileWriter("H:\\git\\SistemaBar\\src\\persistence\\clientes.txt");
+		    PrintWriter gravarArq = new PrintWriter(arq);
+		    for(Cliente cliente: clienteaux) {
+		    
+		    gravarArq.printf(
+		    		"Nome: "+ cliente.getNome()+"\n"+
+		    		"Cpf: " + cliente.getCpf() + "\n" + 
+		    		"Idade: " + cliente.getIdade() + "\n"+
+		    		"Genero: " + cliente.getGenero()+ "\n"
+		    );
+		    if( !(cliente.getSocio() == null)) {
+		    	gravarArq.printf("Socio: " + cliente.getSocio());
+		    }
+		    gravarArq.printf("\n");
+		    }
+		    
+		    arq.close();
+	}
 	
 	
 }
