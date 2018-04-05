@@ -1,11 +1,11 @@
-package testes;
-
-import sistema.Cliente;
+package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import business.Cliente;
 
 public class TestCliente {
 

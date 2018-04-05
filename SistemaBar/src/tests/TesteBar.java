@@ -1,12 +1,12 @@
-package testes;
-
-import sistema.Bar;
-import sistema.Cliente;
+package tests;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import business.Bar;
+import business.Cliente;
 
 public class TesteBar {
 	private Bar B1;

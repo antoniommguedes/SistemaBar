@@ -1,4 +1,4 @@
-package sistema;
+package business;
 
 public class Cliente {
 	private String nome;
