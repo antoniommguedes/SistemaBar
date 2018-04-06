@@ -27,18 +27,18 @@ public class TesteBar {
 		B1.addCliente(C1);
 		assertEquals(true, B1.BuscaCpf(C1.getCpf()));
 	}
-	
+
 	@Test
-	public void removeCliente(){
+	public void removeCliente() {
 		B1.addCliente(C1);
 		B1.removeCliente(C1.getCpf());
 		assertEquals(false, B1.BuscaCpf(C1.getCpf()));
 	}
-	
+
 	@Test
 	public void testListaClientes() {
 		B1.addCliente(C1);
-		assertEquals("nullFulano", B1.ListaClientes());
+		assertEquals("Fulano", B1.ListaClientes());
 
 	}
 
@@ -57,8 +57,40 @@ public class TesteBar {
 		assertEquals(2, B1.TotalPessoas());
 
 	}
-	
-	
-	
 
+	@Test
+	public void testPercentHomem() {
+		B1.addCliente(C1);
+		B1.addCliente(C2);
+		assertEquals(50, B1.porcentHomem());
+
+	}
+
+	@Test
+	public void testPercentMulher() {
+		B1.addCliente(C2);
+		B1.addCliente(C2);
+		assertEquals(100, B1.porcentMulher());
+
+	}
+
+	@Test
+
+	public void testSocios() {
+
+		B1.addCliente(C2);
+		B1.addCliente(C2);
+		assertEquals(2, B1.socios());
+
+	}
+@Test 
+	public void testNaoSocios() {
+
+		B1.addCliente(C2);
+		B1.addCliente(C2);
+		assertEquals(0, B1.naoSocios());
+
+	}
+	
+	
 }
